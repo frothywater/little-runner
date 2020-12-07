@@ -8,8 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
+    "gpx-builder": "^3.6.17",
     "next": "10.0.3",
     "react": "17.0.1",
     "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.10",
+    "typescript": "latest"
   }
 }
