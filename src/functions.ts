@@ -69,7 +69,7 @@ class State {
 }
 
 export function generate(): string {
-  const velocity = 3
+  const velocity = 3.6
   const interval = 5
   const totalDistance = 4000
 
