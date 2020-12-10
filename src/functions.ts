@@ -1,7 +1,7 @@
 import { BaseBuilder, buildGPX } from "gpx-builder"
 import { Point } from "gpx-builder/dist/builder/BaseBuilder/models"
 import Cycle from "./cycle"
-import { CPoint, jitterPoints } from "./geometry"
+import { CPoint, distanceBetween, jitterPoints } from "./geometry"
 import { LinearPath, SemiCircularPath } from "./path"
 
 const baselinePoint = new CPoint(30.30336, 120.086159)
@@ -32,7 +32,7 @@ const paths = [
 ]
 
 export function generate(): string {
-  const interval = 1
+  const interval = 5
   const totalDistance = 3600
   const duration = 12 * 60
   const velocity = totalDistance / duration
@@ -43,6 +43,8 @@ export function generate(): string {
   const cycle = new Cycle(paths)
   const points: CPoint[] = []
   const dates: Date[] = []
+
+  console.log(distanceBetween(relativePoints[0], relativePoints[1]))
 
   while (currentDistance < totalDistance) {
     points.push(new CPoint(cycle.currentX, cycle.currentY))

@@ -41,7 +41,7 @@ export function jitterPoints(points: CPoint[]): CPoint[] {
     if (index == 0) return point
 
     const distance = distanceBetween(points[index - 1], point)
-    const jitterAmount = distance * 0.35 * (Math.random() - 0.5)
+    const jitterAmount = distance * 0.15 * (Math.random() - 0.5)
     const nVector = normalVectorOf(unitVector(points[index - 1], point))
     return new CPoint(point.x + nVector.x * jitterAmount, point.y + nVector.y * jitterAmount)
   })
