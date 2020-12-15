@@ -33,7 +33,7 @@ const paths = [
 
 export function generate(): string {
   const interval = 5
-  const totalDistance = 3600
+  const totalDistance = 4350
   const duration = 12 * 60
   const velocity = totalDistance / duration
 
